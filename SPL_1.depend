@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1673976209 source:d:\programming(c)\c++ learning\spl_01\spl_1\main.cpp
+	"header.h"
+
+1673977960 d:\programming(c)\c++ learning\spl_01\spl_1\header.h
+	<bits/stdc++.h>
+
+1673976445 source:d:\programming(c)\c++ learning\spl_01\spl_1\menu.cpp
+	"header.h"
+
