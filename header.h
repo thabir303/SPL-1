@@ -1,7 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
-
-void menu();
 void display();
-
+string for_partition(string equ);
+string Partition(string equ);
