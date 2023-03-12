@@ -10,10 +10,9 @@ void all_ln(){
 }
 bool ln_function(string equ)
 {
-    char* if_ln;
-    if_ln=strstr(equ,"ln");
+    char* if_ln=strstr(equ.c_str(),"ln");
 
-    if(if_ln)
+    if(if_ln!=nullptr)
         return true;
     else return false;
 }
