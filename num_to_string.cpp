@@ -20,7 +20,7 @@ string n_to_s(int n)
 int char_type(char c)
 {
 
-    if(an_alphabte(c))
+    if(an_alphabet(c))
         return 1;
     else if(a_digit(c))
         return 2;

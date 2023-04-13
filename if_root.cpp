@@ -14,17 +14,19 @@ bool root_function(string equ)
 
     else return false;
 }
-
-
-void all_root(){
+void all_root()
+{
     all_r++;
 }
-
+void root_null()
+{
+    all_r=0;
+}
 string if_root(string equ)
 {
 
     string ans8="";
-    string root_chain;
+    char root_chain[1000];
     int j=0,k;
     char root_var;
 
@@ -42,10 +44,15 @@ string if_root(string equ)
                 else if(if_type==2)
                     root_var='\0';
             }
+        else {
+            root_chain[j]=equ[i];
+            j++;
+            root_chain[j] = equ[i+1];
+            j++;
+           }
         }
-        else
-        {
-            root_chain[j]=equ[i+1];
+        else if(j>0){
+            root_chain[j]  = equ[i+1];
             j++;
         }
         if(equ[i]==')')
@@ -59,7 +66,6 @@ string if_root(string equ)
 
     if(k!=1 && trigono_track_root==false && ln_track_root==false)
     {
-
         ans8 += "(";
         ans8 += for_partition(root_chain);
 
@@ -81,7 +87,6 @@ string if_root(string equ)
             {
                 if(equ[i]!='(' && yr==0)
                     continue;
-
                 else
                 {
                     yr++;
@@ -104,9 +109,7 @@ string if_root(string equ)
                 cout<<cr;
 
             cout<<root_chain<<"/";
-
         }
-
         if(root_var=='\0')
         {
             ans8 = "0";
@@ -123,7 +126,6 @@ string if_root(string equ)
             for(int i=0; root_chain[i]!='\0'; i++)
                 ans8 += root_chain[i];
         }
-
         if(all_r>0)
         {
             cout<<root_chain;
@@ -133,10 +135,10 @@ string if_root(string equ)
 
     else if(trigono_track_root==true || ln_track_root==true)
     {
-        if(trigono_track_root==true)
+        if(trigono_track_root)
             ans8 += if_trigonometry(root_chain);
 
-        else if(ln_track_root==true)
+        else if(ln_track_root)
             ans8 += if_ln(root_chain);
 
         ans8 += "/2*sqrt(";

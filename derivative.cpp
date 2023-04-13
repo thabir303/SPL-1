@@ -1,40 +1,40 @@
-#include "header.h"
+#include "header.h";
+using namespace std;
 
 int alg=0;
 int remove_sign=0;
 char total_sign='\0';
+char universal_sign='\0';
+
 void algebraic()
 {
     alg++;
 }
-
+void algebraic_null()
+{
+    alg = 0;
+}
+void null_universe()
+{
+    universal_sign = '\0';
+}
 //variable,pow,coeffi,sign
 string derivative(char variable,int pow,int coeffi,char sign)
 {
     string ans3 ="";
-    if(alg==0)
-         {
+    if(alg>0)
              algebraic();
-             //cout<<1<<endl;
-         }
 
     if(coeffi == 1323 )
     {
         if(alg>0)
-           {
                 cout<<variable<<" *0 ) "<<sign<<" ( ";
-                //cout<<1<<endl;
-           }
         return ans3;
     }
     if(coeffi == 1322 )
     {
         if(alg>0)
-
-           {
                cout<<total_sign<<" ( "<<variable<<" *0";
-               // cout<<3<<endl;
-           }
         return ans3;
     }
     if(coeffi == 1321) return "";
@@ -45,8 +45,8 @@ string derivative(char variable,int pow,int coeffi,char sign)
             cout<<variable<<" *0";
         return ans3;
     }
-    int main_coeffi = coeffi * pow;
-    int main_pow = pow-1;
+    int main_coeffi = coeffi*pow;
+    int main_pow = (pow-1);
 
     if(total_sign == '+' || total_sign == '-')
     {
@@ -98,10 +98,9 @@ string derivative(char variable,int pow,int coeffi,char sign)
         }
         if(main_coeffi != 1 && main_coeffi != -1)
         {
-            ans3+= to_string(abs(main_coeffi));
+            ans3+= n_to_s(abs(main_coeffi));
             if(alg>0)
                 cout<<coeffi<<"*"<<pow;
-
         }
         if(main_coeffi == 1 && main_pow == 0)
         {
@@ -115,7 +114,6 @@ string derivative(char variable,int pow,int coeffi,char sign)
             if(alg>0)
                 cout<<"1";
         }
-
     }
     else
     {
@@ -124,13 +122,13 @@ string derivative(char variable,int pow,int coeffi,char sign)
             if(main_coeffi<0)
             {
                 ans3 +="-";
-                ans3 +=to_string(abs(main_coeffi));
+                ans3 +=n_to_s(abs(main_coeffi));
                 if(alg>0)
                     cout<<coeffi<<"*"<<pow;
             }
             else
             {
-                ans3 += to_string(main_coeffi);
+                ans3 += n_to_s(main_coeffi);
                 if(alg>0)
                     cout<<coeffi<<"*"<<pow;
             }
@@ -141,7 +139,6 @@ string derivative(char variable,int pow,int coeffi,char sign)
             if(alg>0)
                 cout<<"1";
         }
-
     }
     if(main_pow != 0)
     {
@@ -162,13 +159,13 @@ string derivative(char variable,int pow,int coeffi,char sign)
             ans3 +="-";
             if(alg>0)
                 cout<<"(";
-            ans3+=to_string(abs(main_pow));
+            ans3+=n_to_s(abs(main_pow));
             if(alg>0)
                 cout<<pow<<"-1";
         }
         else
         {
-            ans3+=to_string(main_pow);
+            ans3+=n_to_s(main_pow);
             if(alg>0)
                 cout<<"("<<pow<<"-1";
         }

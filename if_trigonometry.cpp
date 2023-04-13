@@ -64,18 +64,24 @@ bool trigonometry_function(string equ)
         return false;
 }
 
-int trigono_sign(){
+int trigono_sign()
+{
     kt++;
     return trigono_token;
 }
-void all_trigon(){
+void all_trigon()
+{
     all_t++;
+}
+void trigo_null()
+{
+    all_t = 0;
 }
 string if_trigonometry(string equ){
 
     string ans7="";
 
-    string trigonometry_chain;
+    char trigonometry_chain[1000];
     int j=0,k;
     char trigono_var;
 
@@ -94,7 +100,7 @@ string if_trigonometry(string equ){
                 int n_type=char_type(equ[i+1]);
                 if(n_type==1)
                     trigono_var = equ[i+1];
-                else if(n_type)
+                else if(n_type==2)
                     trigono_var = '\0';
             }
             else
@@ -237,5 +243,8 @@ string if_trigonometry(string equ){
     }
     if(all_t>0 && k != 1)
         cout<<"\n\n\t\t\t     = ";
+     trigono_token = 0;
+     kt=0;
     return ans7;
+    trigo_null();
 }

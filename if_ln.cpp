@@ -5,7 +5,8 @@ using namespace std;
 int ln_token=0;
 int all_l=0;
 
-void all_ln(){
+void all_ln()
+{
     all_l++;
 }
 bool ln_function(string equ)
@@ -16,13 +17,16 @@ bool ln_function(string equ)
         return true;
     else return false;
 }
-
+void ln_null()
+{
+    all_l = 0;
+}
 
 string if_ln(string equ)
 {
     string ans4="";
     string ans5="";
-    string ln_chain;
+    char ln_chain[1000];
     int k,j=0;
     char ln_var;
 
@@ -51,7 +55,7 @@ string if_ln(string equ)
         }
         else if(j>0)
         {
-            ln_chain[j]=equ[i+1];
+            ln_chain[j] = equ[i+1];
             j++;
         }
 
@@ -84,7 +88,8 @@ string if_ln(string equ)
                     }
                  }
              }
-             if(cl=='\0'){
+             if(cl=='\0')
+            {
                 cl='x';
                 cout<<cl;
              }
@@ -123,7 +128,6 @@ string if_ln(string equ)
             for(int i=0; ln_chain[i]!='\0'; i++)
                 ans4 += ln_chain[i];
          }
-
      }
      else if(trigono_track_ln == true || ln_track_ln == true)
      {
@@ -132,10 +136,11 @@ string if_ln(string equ)
              if(all_l>0)
              {
                  all_trigon();
+                 cout<<" First of all, we have to differentiate the part inside ln().\n\n\t\t\tSo-\n\n\t\t\t    = ";
              }
              if(k==1)
              {
-                 for(int i=0;i<ln_chain.size();i++)
+                 for(int i=0;i<strlen(ln_chain);i++)
                  {
                      if(ln_chain [i] == '(' && ln_chain[i+1]== ')' )
                      {
@@ -150,7 +155,7 @@ string if_ln(string equ)
               if(all_l>0)
               {
                   cout<<ans5;
-                  //cout<<" ";
+                  cout<<"\n\n\n\t\t\tFinally-\n\n\t\t\t    = ";
               }
 
          }
@@ -166,7 +171,6 @@ string if_ln(string equ)
                     continue;
              ans4+= ln_chain[i];
          }
-
      }
      return ans4;
 }
