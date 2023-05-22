@@ -33,17 +33,4 @@ int char_type(char c)
     else
         return 0;
 }
-char* c_str(string s)
-{
-    char c[100];
 
-    for(int i=0; i<100; i++)
-    {
-        c[i] = s[i];
-    }
-    c[s.size()] = '\0';
-    for(int i=0; i<strlen(c); i++)
-        cout<<c[i];
-    cout<<"\n";
-    return c;
-}
