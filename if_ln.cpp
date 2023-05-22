@@ -174,3 +174,69 @@ string if_ln(string equ)
      }
      return ans4;
 }
+
+/*
+
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    string equ; cin>>equ;
+    int n=equ.size(),j=0,i;
+    /*cout<<n<<endl;
+    for(int i=0;i<=n;i++)
+    cout<<i<<"  "<<s[i]<<endl;
+
+     char ln_chain[1000];
+
+     for( i=0;i<equ.size();i++)
+    {
+        if(equ[i]=='(' && i==0)
+            continue;
+        if(equ[i]=='(' )
+        {
+            if(equ[i+2]==')')
+            {
+                // k=1;
+                // int n_type=char_type(equ[i+1]);
+                // if(n_type==1)
+                //     ln_var=equ[i+1];
+                // else if(n_type==2)
+                //     ln_var='\0' ;
+            }
+           else
+           {
+               ln_chain[j] = equ[i];
+               j++;
+               //cout<<j<<" "<<ln_chain<<endl;
+               ln_chain[j]= equ[i+1];
+               j++;
+               cout<<j<<" "<<ln_chain<<endl;
+           }
+        }
+        if(j>0)
+        {
+            ln_chain[j] = equ[i+1];
+            j++;
+            cout<<j<<" "<<ln_chain<<endl;
+        }
+    }
+    cout<<i<<" "<<j<<endl;
+    for(int i=0;i<strlen(ln_chain);i++)
+    cout<<i<<" "<<ln_chain[i]<<endl;
+
+
+
+
+
+}
+*/
