@@ -43,6 +43,7 @@
 		<Unit filename="if_trigonometry.cpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="num_to_string.cpp" />
+		<Unit filename="str_match.cpp" />
 		<Unit filename="udividedbyv.cpp" />
 		<Unit filename="uv.cpp" />
 		<Extensions>

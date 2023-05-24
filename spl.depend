@@ -2,20 +2,31 @@
 1684778500 source:f:\2-1\last try\spl\derivative.cpp
 	"header.h"
 
-1684831073 f:\2-1\last try\spl\header.h
-	<bits/stdc++.h>
+1684964684 f:\2-1\last try\spl\header.h
+	<iostream>
+	<string.h>
+	<sstream>
+	<cstdlib>
+	<stdlib.h>
+	<stdio.h>
+	<string>
+	<conio.h>
+	<cctype>
+	<cstring>
+	<vector>
+	<math.h>
+	<queue>
 
-1684912210 source:f:\2-1\last try\spl\exp.cpp
-	"header.h"
-	"header.h"
-
-1684778500 source:f:\2-1\last try\spl\for_partition.cpp
+1684963760 source:f:\2-1\last try\spl\exp.cpp
 	"header.h"
 
-1684954172 source:f:\2-1\last try\spl\if_ln.cpp
+1684964662 source:f:\2-1\last try\spl\for_partition.cpp
 	"header.h"
 
-1684955408 source:f:\2-1\last try\spl\if_root.cpp
+1684962899 source:f:\2-1\last try\spl\if_ln.cpp
+	"header.h"
+
+1684963760 source:f:\2-1\last try\spl\if_root.cpp
 	"header.h"
 
 1684951587 source:f:\2-1\last try\spl\main.cpp
@@ -30,16 +41,16 @@
 1684778500 source:f:\2-1\last try\spl\uv.cpp
 	"header.h"
 
-1684953431 source:f:\2-1\last try\spl\display.cpp
-	"header.h"
-	<algorithm>
+1684964103 source:f:\2-1\last try\spl\display.cpp
 	"header.h"
 	<algorithm>
 
-1684841996 source:f:\2-1\last try\spl\if_trigonometry.cpp
-	"header.h"
+1684963760 source:f:\2-1\last try\spl\if_trigonometry.cpp
 	"header.h"
 
 1684872250 source:f:\2-1\last try\spl\for_track.cpp
+	"header.h"
+
+1684958752 source:f:\2-1\last try\spl\str_match.cpp
 	"header.h"
 

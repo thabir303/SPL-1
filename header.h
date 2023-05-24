@@ -1,4 +1,16 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string.h>
+#include<sstream>
+#include<cstdlib>
+#include<stdlib.h>
+#include<stdio.h>
+#include<string>
+#include<conio.h>
+#include<cctype>
+#include<cstring>
+#include<vector>
+#include<math.h>
+#include<queue>
 
 using namespace std;
 
@@ -15,6 +27,8 @@ string if_trigonometry(string equ);
 int char_type(char c);
 void all_trigon();
 //char exp_chain[1000];
+
+string str_match(string equ);
 
 //bool root_function(string equ);
 string if_root(string equ);

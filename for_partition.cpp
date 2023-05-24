@@ -71,9 +71,8 @@ int for_know_type(string equ)
                 continue;
         }
         if(sk=='+' || sk == '-' || equ[i]==')')
-        {
                 as_we_k++;
-        }
+
         sk='\0';
     }
     return as_we_k;
@@ -133,11 +132,11 @@ string Partition(string equ,int size)
         {
             variable = equ[i];
             if(token[i+1] != 4)
-                pow=1;  /// (5*x)
+                pow=1;
             if(equ[i-1] == '+')
-                coeffi=1;   /// (3+x)
+                coeffi=1;
             else if(equ[i-1] == '-')
-                coeffi=-1; /// (3-x)
+                coeffi=-1;
         }
         else if(token[i]==2)
         {
@@ -195,7 +194,6 @@ string Partition(string equ,int size)
                 sign='\0';
                 coeffi = 1;
                 pow = 1;
-
              }
         }
         coeffi=0;
