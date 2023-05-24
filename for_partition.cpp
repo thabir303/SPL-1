@@ -137,32 +137,32 @@ string Partition(string equ,int size)
             if(equ[i-1] == '+')
                 coeffi=1;   /// (3+x)
             else if(equ[i-1] == '-')
-                coeffi=-1; /// (3+x)
+                coeffi=-1; /// (3-x)
         }
         else if(token[i]==2)
         {
-            if(equ[i+1] == '*' )  /// (5*x+10)
+            if(equ[i+1] == '*' )
                 coeffi = (int)(equ[i])-48;
             if(equ[i-1]=='-' && equ[i-2]=='(')
             {
-                coeffi=coeffi*(-1);  /// (-5*x+10)
+                coeffi=coeffi*(-1);
             }
             if( (equ[i-2] != '^' ) && (equ[i-1]=='+' || equ[i-1]=='-' ) && (equ[i+1]=='+' || equ[i+1]=='-' ) )
-                coeffi=1321;  /// (5*x^2+3+x)
+                coeffi=1321;
             else if( (equ [i-2] !='^' ) && (equ[i-1]=='+' || equ[i-1]=='-' ) && ( equ[i+1]=='(' || equ[i+1] ==')' ))
             {
-                coeffi = 1322; ///(x+3)
-                ///variable = equ[i];
+                coeffi = 1322;
+                variable = equ[i];
             }
             else if((equ[i-1]=='(' || equ[i-1]==')' ) && ( equ [i+1]=='+' || equ[i+1]== '-' ) )
             {
-                coeffi = 1323; /// (5+3x) /// constant--> 5
-                ///variable = equ[i];
+                coeffi = 1323;
+                variable = equ[i];
             }
             else if((equ[i-1]=='(' || equ[i-1]==')') && (equ[i+1]=='(' || equ[i+1]==')'))
             {
-                coeffi = 1324; /// (5)
-                ///variable = equ[i];
+                coeffi = 1324;
+                variable = equ[i];
             }
         }
         else if(token[i]==3)
@@ -205,7 +205,7 @@ string Partition(string equ,int size)
         null_universe();
         ans2+=")";
         if(p>0)
-            cout<<"\n\n\t\t\t    = ";
+            cout<<"\n\n\t\t\t    =  ";
     return ans2;
 }
 

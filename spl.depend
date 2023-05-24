@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1684778500 source:f:\2-1\last try\spl\derivative.cpp
+	"header.h"
+
+1684831073 f:\2-1\last try\spl\header.h
+	<bits/stdc++.h>
+
+1684912210 source:f:\2-1\last try\spl\exp.cpp
+	"header.h"
+	"header.h"
+
+1684778500 source:f:\2-1\last try\spl\for_partition.cpp
+	"header.h"
+
+1684954172 source:f:\2-1\last try\spl\if_ln.cpp
+	"header.h"
+
+1684955408 source:f:\2-1\last try\spl\if_root.cpp
+	"header.h"
+
+1684951587 source:f:\2-1\last try\spl\main.cpp
+	"header.h"
+
+1684778500 source:f:\2-1\last try\spl\num_to_string.cpp
+	"header.h"
+
+1684778500 source:f:\2-1\last try\spl\udividedbyv.cpp
+	"header.h"
+
+1684778500 source:f:\2-1\last try\spl\uv.cpp
+	"header.h"
+
+1684953431 source:f:\2-1\last try\spl\display.cpp
+	"header.h"
+	<algorithm>
+	"header.h"
+	<algorithm>
+
+1684841996 source:f:\2-1\last try\spl\if_trigonometry.cpp
+	"header.h"
+	"header.h"
+
+1684872250 source:f:\2-1\last try\spl\for_track.cpp
+	"header.h"
+

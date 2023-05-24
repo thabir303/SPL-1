@@ -18,7 +18,7 @@ void null_universe()
 {
     universal_sign = '\0';
 }
-//variable,pow,coeffi,sign
+
 string derivative(char variable,int pow,int coeffi,char sign)
 {
     string ans3 ="";

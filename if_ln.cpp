@@ -40,7 +40,8 @@ string if_ln(string equ)
             {
                 k=1;
                 int n_type=char_type(equ[i+1]);
-                if(n_type==1)
+                int n_type2=char_type(equ[i+2]);
+                if(n_type==1  )
                     ln_var=equ[i+1];
                 else if(n_type==2)
                     ln_var='\0' ;
@@ -64,8 +65,10 @@ string if_ln(string equ)
     }
      bool trigono_track_ln=trigonometry_function(ln_chain);
      bool ln_track_ln=ln_function(ln_chain);
+     bool sqrt_ln=root_function(ln_chain);
+     bool exp_track_ln=exp_function(ln_chain);
 
-     if( k != 1 && trigono_track_ln == false && ln_track_ln == false)
+     if( k != 1 && trigono_track_ln == false && ln_track_ln == false && exp_track_ln == false && sqrt_ln==false )
      {
          if(all_l>0)
          {
@@ -110,7 +113,7 @@ string if_ln(string equ)
          }
 
      }
-     else if(k==1 && trigono_track_ln == false && ln_track_ln == false)
+     else if(k==1 && trigono_track_ln == false && ln_track_ln == false && exp_track_ln == false && sqrt_ln==false)
      {
          if(ln_var == '\0')
          {
@@ -129,14 +132,13 @@ string if_ln(string equ)
                 ans4 += ln_chain[i];
          }
      }
-     else if(trigono_track_ln == true || ln_track_ln == true)
+     else if(trigono_track_ln || ln_track_ln  || exp_track_ln  || sqrt_ln ==true )
      {
          if(trigono_track_ln ==true)
          {
              if(all_l>0)
              {
                  all_trigon();
-                 cout<<" First of all, we have to differentiate the part inside ln().\n\n\t\t\tSo-\n\n\t\t\t    = ";
              }
              if(k==1)
              {
@@ -146,7 +148,7 @@ string if_ln(string equ)
                      {
                          ln_chain[i+1] = ln_var;
                          ln_chain[i+2] =' )' ;
-                        ln_chain[i+2]  = '\0' ;
+                        ln_chain[i+3]  = '\0' ;
                      }
                  }
               }
@@ -159,8 +161,65 @@ string if_ln(string equ)
               }
 
          }
+        else if(exp_track_ln)
+        {
+            if(all_l>0)
+            {
+                all_exp();
+                cout<<" First of all, we have to differentiate the part inside e^().";
+                cout<<"\n\n\t\t\tSo-\n\n\t\t\t   = ";
+            }
+            if(k==1)
+            {
+                for(int i=0;i<strlen(ln_chain);i++)
+                 {
+                     if(ln_chain [i] == '(' && ln_chain[i+1]== ')' )
+                     {
+                         ln_chain[i+1] = ln_var;
+                         ln_chain[i+2] =' )' ;
+                        ln_chain[i+3]  = '\0' ;
+                     }
+                }
+           }
+           ans5+=if_exp(ln_chain);
+           ans4+=ans5;
+           if(all_l>0)
+           {
+               cout<<ans5;
+                cout<<"\n\n\n\t\t\tFinally-\n\n\t\t\t    = ";
+           }
+        }
+        else if(sqrt_ln)
+        {
+
+            if(all_l>0)
+            {
+                all_root();
+                cout<<" First of all, we have to differentiate the part inside sqrt().";
+                cout<<"\n\n\t\t\tSo-\n\n\t\t\t   = ";
+            }
+            if(k==1)
+            {
+                for(int i=0;i<strlen(ln_chain);i++)
+                 {
+                     if(ln_chain [i] == '(' && ln_chain[i+1]== ')' )
+                     {
+                         ln_chain[i+1] = ln_var;
+                         ln_chain[i+2] =' )' ;
+                        ln_chain[i+3]  = '\0' ;
+                     }
+                }
+           }
+           ans5+=if_root(ln_chain);
+           ans4+=ans5;
+           if(all_l>0)
+           {
+               cout<<ans5;
+                cout<<"\n\n\n\t\t\tFinally-\n\n\t\t\t    = ";
+           }
+        }
          else if(ln_track_ln == true)
-            ans4 +=if_ln(ln_chain);
+              ans4 +=if_ln(ln_chain);
 
          ans4+=" / ";
          for(int i=0;ln_chain[i]!='\0';i++)
@@ -175,68 +234,14 @@ string if_ln(string equ)
      return ans4;
 }
 
-/*
-
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************
-
-#include <bits/stdc++.h>
-using namespace std;
-
-
-int main()
-{
-    string equ; cin>>equ;
-    int n=equ.size(),j=0,i;
-    /*cout<<n<<endl;
-    for(int i=0;i<=n;i++)
-    cout<<i<<"  "<<s[i]<<endl;
-
-     char ln_chain[1000];
-
-     for( i=0;i<equ.size();i++)
-    {
-        if(equ[i]=='(' && i==0)
-            continue;
-        if(equ[i]=='(' )
-        {
-            if(equ[i+2]==')')
-            {
-                // k=1;
-                // int n_type=char_type(equ[i+1]);
-                // if(n_type==1)
-                //     ln_var=equ[i+1];
-                // else if(n_type==2)
-                //     ln_var='\0' ;
-            }
-           else
-           {
-               ln_chain[j] = equ[i];
-               j++;
-               //cout<<j<<" "<<ln_chain<<endl;
-               ln_chain[j]= equ[i+1];
-               j++;
-               cout<<j<<" "<<ln_chain<<endl;
-           }
-        }
-        if(j>0)
-        {
-            ln_chain[j] = equ[i+1];
-            j++;
-            cout<<j<<" "<<ln_chain<<endl;
-        }
-    }
-    cout<<i<<" "<<j<<endl;
-    for(int i=0;i<strlen(ln_chain);i++)
-    cout<<i<<" "<<ln_chain[i]<<endl;
 
 
 
 
 
-}
-*/
+
+
+
+
+
+

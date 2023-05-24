@@ -14,7 +14,8 @@ int trigono_sign();
 string if_trigonometry(string equ);
 int char_type(char c);
 void all_trigon();
-char* c_str(string);
+//char exp_chain[1000];
+
 //bool root_function(string equ);
 string if_root(string equ);
 int for_know_type(string equ);
